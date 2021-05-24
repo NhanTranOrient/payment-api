@@ -38,7 +38,7 @@ namespace payment_api.Controllers
                       Currency = "usd",
                       ProductData = new SessionLineItemPriceDataProductDataOptions
                       {
-                        Name = "Stubborn Attachments",
+                        Name = "Printed Chiffon Dress",
                       },
                     },
                     Quantity = 1,
