@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using payment_api.Domain.Data;
 using payment_api.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,12 @@ namespace payment_api.Controllers
                 Name = "Printed Chiffon Dress",
                 Price = 60
             };
+        }
+
+        [HttpGet("list")]
+        public IEnumerable<Product> GetProducts()
+        {
+            return ProductData.GetProducts();
         }
     }
 }

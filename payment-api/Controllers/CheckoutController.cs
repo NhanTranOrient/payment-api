@@ -19,7 +19,7 @@ namespace payment_api.Controllers
         }
 
         [HttpPost]
-        public CheckoutSession Checkout()
+        public CheckoutSession Checkout(Product product)
         {
             var UIdomain = "http://localhost:3000";
             var options = new SessionCreateOptions
@@ -34,11 +34,11 @@ namespace payment_api.Controllers
                   {
                     PriceData = new SessionLineItemPriceDataOptions
                     {
-                      UnitAmount = 6000,
+                      UnitAmount = (long?)(product.Price*100),
                       Currency = "usd",
                       ProductData = new SessionLineItemPriceDataProductDataOptions
                       {
-                        Name = "Printed Chiffon Dress",
+                        Name = product.Name,
                       },
                     },
                     Quantity = 1,
