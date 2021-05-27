@@ -45,7 +45,7 @@ namespace payment_api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "payment_api v1"));
             }
 
-            StripeConfiguration.ApiKey = "sk_test_51IuZBIEtUd2UpeaGYT05YmBS1VpmSfPEvIIpSfU0uPkz6zVhrHQkxlmXgE7EF2DzekerQmo5HL24SdopClRAeHj500w9sOgs2d";
+            StripeConfiguration.ApiKey = Configuration.GetSection("StripeApiKey").Value;
 
             app.UseRouting();
             app.UseCors(opt => opt.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
