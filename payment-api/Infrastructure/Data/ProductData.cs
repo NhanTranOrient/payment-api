@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace payment_api.Domain.Data
+namespace payment_api.Infrastructure.Data
 {
     public static class ProductData
     {
